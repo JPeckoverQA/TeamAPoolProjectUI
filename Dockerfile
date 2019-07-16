@@ -24,4 +24,4 @@ COPY . .
 # get dependencies
 RUN NG_CLI_ANALYTICS=ci npm install
 # main process for the container when it runs
-ENTRYPOINT ["/usr/bin/ng", "serve", "--host", "0.0.0.0", "-d"]
+ENTRYPOINT ["/usr/bin/ng", "serve", "--host", "0.0.0.0"]
