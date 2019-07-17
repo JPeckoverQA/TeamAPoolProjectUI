@@ -13,7 +13,7 @@ RUN NG_CLI_ANALYTICS=ci npm install
 RUN ng  build
 RUN ls dist
 #nginx base image
-FROM nginx:latest
+FROM nginx:alpine
 EXPOSE 80
 WORKDIR /app
 COPY --from=build /build/dist/TeamAPoolProjectUI .
