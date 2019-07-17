@@ -2,7 +2,6 @@
 USER root
 FROM node:10-alpine as build
 RUN apt update
-EXPOSE 4200
 WORKDIR /build
 #copy code in
 COPY . .
@@ -10,9 +9,11 @@ COPY . .
 #angular installation
 RUN NG_CLI_ANALYTICS=ci npm install -g @angular/cli
 RUN NG_CLI_ANALYTICS=ci npm install
-RUN npm  build
+#build in production mode
+RUN npm  build --prod
 #nginx base image
 FROM nginx:latest
+EXPOSE 80
 WORKDIR /app
 COPY --from=build /build/dist/TeamAPoolProjectUI
 COPY nginx.conf /etc/nginx/nginx.conf
