@@ -24,4 +24,5 @@ COPY . .
 # get dependencies
 RUN NG_CLI_ANALYTICS=ci npm install
 # main process for the container when it runs
+#ng serve is a development tool, ng build should be used in testing/production scenarios
 ENTRYPOINT ["/usr/bin/ng", "serve", "--host", "0.0.0.0"]
