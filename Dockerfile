@@ -14,7 +14,7 @@ RUN npm  build --prod
 #nginx base image
 FROM nginx:latest
 EXPOSE 80
-#WORKDIR /app
+WORKDIR /app
 COPY --from=build /build/dist/TeamAPoolProjectUI .
 COPY nginx.conf /etc/nginx/nginx.conf
 
