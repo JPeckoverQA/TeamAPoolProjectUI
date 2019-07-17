@@ -15,7 +15,7 @@ RUN npm  build --prod
 FROM nginx:latest
 EXPOSE 80
 WORKDIR /app
-COPY --from=build /build/dist/TeamAPoolProjectUI
+COPY --from=build /build/dist/TeamAPoolProjectUI .
 COPY nginx.conf /etc/nginx/nginx.conf
 
 
