@@ -10,7 +10,8 @@ COPY . .
 RUN NG_CLI_ANALYTICS=ci npm install -g @angular/cli
 RUN NG_CLI_ANALYTICS=ci npm install
 #build in production mode
-RUN npm  build --prod
+RUN ng  build --prod
+RUN ls dist
 #nginx base image
 FROM nginx:latest
 EXPOSE 80
