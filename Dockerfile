@@ -1,7 +1,7 @@
 # base image
 FROM node:10-alpine as build
 USER root
-RUN apt update
+#RUN apt update
 WORKDIR /build
 #copy code in
 COPY . .
