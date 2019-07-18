@@ -3,12 +3,11 @@ import { CommonModule } from '@angular/common';
 import { MenuComponent } from './components/menu/menu.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { TestComponent } from './components/test/test.component';
 
 
 
 @NgModule({
-  declarations: [MenuComponent, TestComponent],
+  declarations: [MenuComponent],
   imports: [
     CommonModule,
     RouterModule,
